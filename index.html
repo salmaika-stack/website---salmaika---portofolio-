@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salmaika Febriyanti | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #faf8f5;
+  --pink: #c49aab;
+  --pink-light: #f3e6e9;
+  --lavender: #eeeaf4;
+  --text: #514750;
+  --muted: #827781;
+  --border: #eae3e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #faf8f5ee;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font: 700 25px 'Playfair Display', serif;
+  color: #9f7185;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: #a5748b;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.eyebrow {
+  color: #a5748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 70px 0;
+  background:
+    radial-gradient(circle at 85% 20%, #eeeaf4, transparent 30%),
+    radial-gradient(circle at 10% 90%, #f3e6e9, transparent 30%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  align-items: center;
+  gap: 55px;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 66px);
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #b58299;
+}
+
+.hero-description {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #b8879b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #9f7185;
+}
+
+.btn-secondary {
+  border: 1px solid #d8c5ce;
+  background: #ffffff80;
+}
+
+.photo-frame {
+  max-width: 330px;
+  margin: auto;
+  padding: 11px;
+  background: #ffffffcc;
+  border: 1px solid #e7dbe2;
+  border-radius: 180px 180px 12px 12px;
+  box-shadow: 0 20px 60px #7051641a;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 170px 170px 7px 7px;
+}
+
+.photo-caption {
+  text-align: center;
+  padding: 12px 0 4px;
+  font: italic 15px 'Playfair Display', serif;
+  color: #98768a;
+}
+
+.content-section {
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-note {
+  background: var(--lavender);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+
+.quote {
+  font: 27px/1.5 'Playfair Display', serif;
+  color: #806b89;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.info-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.info-item {
+  padding: 13px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow-wrap: anywhere;
+}
+
+.info-item small {
+  display: block;
+  color: #a17d90;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.info-item span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* SKILLS */
+.skills-section {
+  background: #f2eef6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.skill-card {
+  padding: 24px;
+  background: #ffffffd9;
+  border: 1px solid #e6deeb;
+  border-radius: 9px;
+}
+
+.skill-card h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.project-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-number {
+  color: #b8879b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.project-card h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* EXPERIENCE */
+.experience-section {
+  background: #f7f1f2;
+}
+
+.experience-card {
+  max-width: 760px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  border-left: 3px solid #c49aab;
+  border-radius: 5px 10px 10px 5px;
+}
+
+.experience-card h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* DREAM */
+.dream-section {
+  text-align: center;
+  background: white;
+}
+
+.dream-box {
+  max-width: 760px;
+  margin: auto;
+  padding: 42px 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fffaf7, #f3eef7);
+}
+
+.dream-box h2 {
+  font-size: clamp(34px, 5vw, 50px);
+  color: #a77991;
+  margin: 12px 0;
+}
+
+.dream-box p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.contact-item {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 21px;
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+
+.contact-item small {
+  display: block;
+  color: #a17d90;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.contact-item a,
+.contact-item span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-item a:hover {
+  color: #a5748b;
+}
+
+footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+  nav {
+    padding: 14px 0;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 52px 0 65px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .photo-frame {
+    max-width: 250px;
+  }
+
+  .content-section {
+    padding: 65px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .skills-grid,
+  .project-grid,
+  .info-list,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">Salmaika.</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div>
+      <p class="eyebrow">Personal Portfolio</p>
+      <h1>Hi, I'm<br><span>Salmaika Febriyanti.</span></h1>
+      <p class="hero-description">
+        A student with curiosity, little dreams, and a big desire
+        to explore the world. Welcome to my little space on the internet.
+      </p>
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">Get to Know Me</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="photo-frame">
+      <img
+        src="https://cdn.phototourl.com/member/2026-10-16-739337fe-c843-41a9-ab09-8f0733804574.jpg"
+        alt="Foto Salmaika Febriyanti">
+      <div class="photo-caption">a little piece of me ♡</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="content-section" id="about">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Get to Know Me</p>
+      <h2>About Me</h2>
+      <p>A little introduction, simply me.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-note">
+        <p class="quote">“Growing at my own pace, dreaming without limits.”</p>
+      </div>
+
+      <div class="about-text">
+        <p>
+          Halo! Aku Salmaika Febriyanti, siswi kelas XII TKJ 1
+          di SMK Panca Bhakti Rakit dengan jurusan
+          Teknik Jaringan Komputer dan Telekomunikasi (TJKT).
+        </p>
+        <p>
+          Aku memiliki hobi memasak dan ingin terus belajar,
+          mencoba hal baru, serta mendapatkan pengalaman
+          yang berharga untuk masa depanku.
+        </p>
+
+        <div class="info-list">
+          <div class="info-item"><small>Nama</small><span>Salmaika Febriyanti</span></div>
+          <div class="info-item"><small>Kelas</small><span>XII TKJ 1</span></div>
+          <div class="info-item"><small>Sekolah</small><span>SMK Panca Bhakti Rakit</span></div>
+          <div class="info-item"><small>Jurusan</small><span>TJKT</span></div>
+          <div class="info-item"><small>Hobi</small><span>Memasak</span></div>
+          <div class="info-item"><small>Cita-cita</small><span>Exploring the world</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="content-section skills-section" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">What I Learn</p>
+      <h2>My Skills</h2>
+      <p>Hal-hal yang ingin terus aku pelajari dan kembangkan.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Computer Networking</h3>
+        <p>Mempelajari dasar jaringan komputer sesuai dengan jurusan TJKT.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Technical Skills</h3>
+        <p>Mengenal perangkat jaringan, konfigurasi dasar, dan teknologi informasi.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Communication</h3>
+        <p>Belajar menyampaikan pendapat dan bekerja sama dengan orang lain.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Creativity</h3>
+        <p>Mengembangkan kreativitas melalui hobi memasak dan membuat sesuatu yang baru.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="content-section" id="projects">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">My Learning Journey</p>
+      <h2>My Projects</h2>
+      <p>Contoh bidang proyek yang berkaitan dengan pembelajaran dan minatku.</p>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <p class="project-number">PROJECT 01</p>
+        <h3>Personal Portfolio Website</h3>
+        <p>Membuat website portofolio pribadi menggunakan HTML dan CSS untuk memperkenalkan diri.</p>
+      </div>
+
+      <div class="project-card">
+        <p class="project-number">PROJECT 02</p>
+        <h3>Computer Networking</h3>
+        <p>Mempelajari perancangan topologi jaringan dan konfigurasi dasar perangkat jaringan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="content-section experience-section" id="experience">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">My Journey</p>
+      <h2>Experience</h2>
+      <p>Pengalaman belajar dan mengembangkan diri.</p>
+    </div>
+
+    <div class="experience-card">
+      <h3>Learning at SMK Panca Bhakti Rakit</h3>
+      <p>
+        Selama belajar di jurusan TJKT, aku mengenal dasar-dasar
+        jaringan komputer dan teknologi informasi. Aku juga terus
+        berusaha mengembangkan keterampilan, belajar bekerja sama,
+        serta mendapatkan pengalaman baru melalui kegiatan sekolah.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DREAM -->
+<section class="content-section dream-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">A Dream of Mine</p>
+      <h2>My Dream</h2>
+    </div>
+
+    <div class="dream-box">
+      <p>One day, I hope to...</p>
+      <h2>Explore the World.</h2>
+      <p>
+        Melihat dunia lebih luas, mengunjungi tempat-tempat baru,
+        mengenal budaya yang berbeda, dan menciptakan cerita
+        yang akan selalu aku ingat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="content-section" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Say Hello</p>
+      <h2>Let's Connect</h2>
+      <p>You can find me here.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <small>EMAIL</small>
+        <a href="mailto:stipe8240@gmail.com">stipe8240@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <small>INSTAGRAM</small>
+        <a href="https://www.instagram.com/sllm4ika_/"
+           target="_blank" rel="noopener noreferrer">@sllm4ika_</a>
+      </div>
+
+      <div class="contact-item">
+        <small>SCHOOL</small>
+        <span>SMK Panca Bhakti Rakit</span>
+      </div>
+
+      <div class="contact-item">
+        <small>MAJOR</small>
+        <span>Teknik Jaringan Komputer dan Telekomunikasi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>Made with care by Salmaika Febriyanti · © 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
+  
